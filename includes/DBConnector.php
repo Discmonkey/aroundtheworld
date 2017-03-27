@@ -24,7 +24,7 @@ class DBConnector
 
     function __construct()
     {
-        $this->connection = new mysqli("127.0.0.1", "root", "mten1990m", "test");
+        $this->connection = new mysqli("airports.c74vpprqwl8a.us-east-1.rds.amazonaws.com", "maxgrinchenko", "ASDF;lkj4231", "gotravel");
     }
 
     private function prepare_param_statements(array &$params) {
