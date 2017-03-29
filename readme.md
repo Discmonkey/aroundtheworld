@@ -1,8 +1,8 @@
-I am a bit of data junkie, and I've always been curious about the prices per mile we get on our tickets. For example, is a flight
-to Ulan Batur actually a good deal compared to a flight between Atlanta and NY? And how do prices oscillate with time? And if I want
-to go on vacation during this week, where should I go? How long would it take me to get there?
+I've always been curious about the prices per mile we get on our airplane tickets. For example, is a flight
+to Ulan Batur actually a 'good deal' compared to a flight between Atlanta and NY? And how do prices oscillate with time? And if I want
+to go on vacation during a particular week, where should I go ( in terms of the best deal on tickets)?
 
-With these questinos in mind I wanted to create a tool that allows anyone to query the best ticket prices, for multiple destinations, at the same time. Furthermore, over time it can give a good baseline of whether or not you are getting a price for a particular destination.
+With these questions in mind I wanted to create a tool that allows anyone to query the best ticket prices, for multiple destinations, at the same time. Furthermore, over time it can give a good baseline of whether or not you are getting a price for a particular destination.
 
 Most current tools concentrate on allowing you to find a flight to one specific destination and they don't give a historical perspective on the price you are getting. In other words, is this flight to this airport a good price compared to how much it cost a month ago?
 
