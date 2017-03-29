@@ -19,6 +19,7 @@ h3 {
 
 .container {
     padding: 100px 200px 100px 200px;
+    perspective: 800px;
 }
 
 .content {
@@ -38,7 +39,38 @@ h3 {
     padding-top: 10px;
 }
 
+.mainTransform {
+    transform-style: preserve-3d;
+    transition: transform 1s;
+}
 #dates {
     margin-bottom: 20px;
 }
+#back {
+    width: 100%;
+    position: absolute;
+    margin: auto;
+    transform: rotateY(180deg);
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}
+#front {
+    width: 100%;
+    position: absolute;
+    margin: auto;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}
+#transform {
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    transform: rotateY(0deg);
+}
+
+#transform.flipped {
+    transform: rotateY(180deg);
+}
+
 

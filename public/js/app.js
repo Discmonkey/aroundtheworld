@@ -55,8 +55,11 @@ app.controller('main', function($scope, $http){
     $scope.destinationsSubmit = [];
     $scope.showOrigin = true;
     $scope.showDestinations = false;
-    $scope.startDate = '';
-    $scope.endDate = '';
+    $scope.depDate = '';
+    $scope.returnDate = '';
+    $scope.flip = false;
+
+    $scope.results = [];
     $scope.submitDeparture = function() {
         if ( $scope.origin ) {
             $scope.showDestinations = true;
@@ -75,20 +78,43 @@ app.controller('main', function($scope, $http){
         $scope.currentDestination = '';
     };
 
+    $scope.individualRequest = function(num) {
+        $http.post('/getTrip', {
+            num: num
+        }).then(function(res) {
+            if ( res.data ) {
+                $scope.results[i]['duration'] = res.data['duration'];
+                $scope.results[i]['cost'] = res.data['cost'];
+                $scope.results[i]['avg_cost'] = res.data['avg_cost'];
+                $scope.results[i]['avg_duration'] = res.data['avg_duration'];
+                $scope.results[i]['cost_per_mile'] = res.data['cost_per_mile'];
+            } else {
+                delete results[i];
+            }
+        });
+    };
     $scope.submitAll = function () {
         if ($scope.origin != '' &&
             $scope.destinationsSubmit.length > 0 &&
-            $scope.startDate != '' && $scope.startDate != undefined &&
-            $scope.endDate != '' && $scope.endDate != undefined) {
+            $scope.depDate != '' && $scope.depDate != undefined &&
+            $scope.returnDate != '' && $scope.returnDate != undefined) {
 
-            $http.post('/post/submitAll.php', {
+            $http.post('/submitAll.php', {
                 origin: $scope.origin,
                 destinations: $scope.destinationsSubmit,
-                startDate: $scope.startDate,
-                endDate: $scope.endDate
-            }).then(function(data) {
-                console.log(data);
+                depDate: $scope.depDate,
+                returnDate: $scope.returnDate
+            }).then(function(res) {
+                $scope.results = res.data;
+                var length = res.data.length;
+                $scope.flip = true;
+                for ( var i = 0; i < length; i++) {
+                    $scope.individualRequest(i);
+                }
             });
         }
     }
+
+
+    
 });
