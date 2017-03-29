@@ -4,6 +4,7 @@
  * User: mgrinchenko
  * Date: 3/27/2017
  * Time: 6:56 PM
+ * The header is separated out for maintainability, and in case more pages will be added to this app. 
  */
 
 ?>

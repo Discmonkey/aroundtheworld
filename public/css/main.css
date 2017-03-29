@@ -6,19 +6,23 @@ button {
 h3 {
     text-align: center;
 }
-#content-container {
+th {
+    cursor: pointer;
+}
+.content-container {
     display:block;
     margin: auto;
-    height: 900px;
     width: 100%;
     border: 1px solid #4564a7;
     box-shadow: 0 0 28px 10px #a7a7a7;
-    border-radius: 5%;
+    border-radius: 10%;
     padding: 40px;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
 }
 
 .container {
-    padding: 100px 200px 100px 200px;
+    padding: 100px 0 100px 0;
     perspective: 800px;
 }
 
@@ -26,10 +30,20 @@ h3 {
     font-family: 'Raleway', sans-serif;
     display: block;
     margin: auto auto 20px;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
 }
 
 .bold {
     font-weight: bold;
+}
+
+.delete {
+    margin-top: -2px;
+}
+
+.padding-top {
+    padding-top: 12px;
 }
 #main-description {
     font-weight: bold;
@@ -39,10 +53,6 @@ h3 {
     padding-top: 10px;
 }
 
-.mainTransform {
-    transform-style: preserve-3d;
-    transition: transform 1s;
-}
 #dates {
     margin-bottom: 20px;
 }
@@ -58,6 +68,7 @@ h3 {
     width: 100%;
     position: absolute;
     margin: auto;
+    transform: rotateY(0deg);
     backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
 }
@@ -66,11 +77,24 @@ h3 {
     height: 100%;
     backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
-    transform: rotateY(0deg);
+    transform: rotateX(0deg);
+    transform-style: preserve-3d;
+    transition: transform 1s;
 }
 
 #transform.flipped {
     transform: rotateY(180deg);
 }
 
+.btn-sm {
+    font-weight: bold;
+}
+
+.no-flights {
+    background-color: indianred !important;
+}
+
+.margin-top {
+    margin-top: 15px;
+}
 

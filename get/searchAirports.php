@@ -4,6 +4,9 @@
  * User: mgrinchenko
  * Date: 3/27/2017
  * Time: 9:42 PM
+ * This endpoint was created to allow the user to 'live search' through the database of airports I have hosted on 
+ * Amazon. I hope to reduce overall network traffic by sending the user 10 or less specific airports instead of 
+ * all 7000 at once. 
  */
 include "../includes/DBConnector.php";
 

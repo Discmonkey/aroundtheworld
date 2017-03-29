@@ -9,9 +9,12 @@
 # In order to facilitate the user experience we will keep a queue of API requests in the session,
 # this page is responsible for creating that queue and sending the initial data back to the client.
 # The initial data will simply be a list of cities and the distance between them and the departure point.
+# We can use the distance metric as our first graph on the client side, hopefully alleviating some of the issues with
+# waiting for the fairly lengthy API calls that take place after. 
 
 
-
+include "includes/DBConnector.php";
+include "includes/airport.php";
 
 session_start();
 $connection = new DBConnector();
@@ -33,6 +36,8 @@ $origin = array_pop($airports);
 $return_array = [];
 foreach( $airports as $airport ) {
     $airport->set_distance($origin);
+    
+    #add additional fields needed by front end
     $temp_arr = $airport->to_array();
     $temp_arr['duration'] = 0;
     $temp_arr['cost'] = 0;
@@ -40,7 +45,7 @@ foreach( $airports as $airport ) {
     $temp_arr['ang_duration'] = 0;
     $temp_arr['cost_per_mile'] = 0;
     
-    #add additional fields needed by front end
+    
     $return_array []= $temp_arr;
 
 }

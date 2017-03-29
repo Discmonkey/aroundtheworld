@@ -8,8 +8,7 @@
  */
 
 # this class was created to manage all functions related to airports, it functions as quasi model and also
-# includes useful methods such as finding the distance to another airport, and converting one self to an associative
-# array that can then be inserted directly into a queue
+# includes useful methods such as finding the distance to another airport. 
 class Airport
 {
     public $id = 0;

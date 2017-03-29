@@ -1,10 +1,10 @@
 <?php
 
 /**
- * Created by PhpStorm.
  * User: maxg
  * Date: 3/25/17
  * Time: 4:01 PM
+ * This is a simple database connection class. It supports parameterized queries and inserts. 
  */
 
 function ref_values($arr){
